@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mvvm_template/constants/router_path_constants.dart';
+import 'package:flutter_mvvm_template/utils/navigation_service.dart';
 
 class SplashViewModel extends ChangeNotifier {
 
@@ -10,6 +12,7 @@ class SplashViewModel extends ChangeNotifier {
 
   onInit() async {
     await Future.delayed(const Duration(seconds: 1),() {
+      NavigationService.shared.navigateReplaceTo(HomeViewRoute);
       // if (mobile.isEmpty) {
       //   NavigationService.shared.navigateReplaceTo(RegisterRoute);
       // } else {

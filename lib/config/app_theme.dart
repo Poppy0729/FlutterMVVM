@@ -7,18 +7,18 @@ class AppTheme {
   // *****************
   // static colors
   // *****************
-  static const Color primaryColor = Color(0xff5a5a5a);
+  static const Color primaryColor = Color(0xffF6EDFF);
   static const Color primaryVariantColor = Colors.white;
   static const Color onPrimaryColor = Color(0xffbdbdbd);
   static const Color textColorPrimary = Colors.white;
   static const Color textColorSecond = Colors.black;
   static const Color textButtonColor = Color(0xff433938);
   static const Color textButtonDisabledColor = Color(0xff7B7B7B);
-  static const Color _appBarColorLight = Color(0xff5a5a5a); //Color(0xff6F5F5E);
+  static const Color _appBarColorLight = Color(0xffF6EDFF); //Color(0xff6F5F5E);
   static const Color _iconColor = Colors.white;
   static const Color _accentColor = Colors.black;
   static const Color yellowColor = Color(0xffFFD400);
-  static const Color baseBackgroundColor = Color(0xff5a5a5a);
+  static const Color baseBackgroundColor = Color(0xffF6EDFF);
   static const Color greyStrokeColor = Color(0xffB5B5B5);
   static const Color shadowColor = Color(0xff393939);
   static const Color disabledColor = Color(0xff5A5A5A);

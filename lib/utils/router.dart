@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mvvm_template/views/home/home_screen.dart';
 import 'package:flutter_mvvm_template/views/splash/splash_screen.dart';
 import '../constants/router_path_constants.dart';
 
@@ -9,8 +10,9 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
   switch (settings.name) {
     case SplashViewRoute:
       return MaterialPageRoute(builder: (_) => const SplashScreen());
-    // case HomeViewRoute:
-    //   return CupertinoPageRoute(builder: (context) => MainTabbar(selectedIndex: 0,));
+    case HomeViewRoute:
+      return MaterialPageRoute(builder: (_) => const HomeScreen());
+      // return CupertinoPageRoute(builder: (context) => MainTabbar(selectedIndex: 0,));
     case LoginViewRoute:
       return MaterialPageRoute(builder: (_) => const SplashScreen());
     case RegisterViewRoute:
