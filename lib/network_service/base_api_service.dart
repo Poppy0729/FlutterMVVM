@@ -49,7 +49,6 @@ class BaseAPIService {
       return apiResponseMapping.internetError();
     }
     try {
-      await checkCertificate(dio);
       Response<dynamic> response = await dio.get(
         baseUrl + endpoint,
         options: Options(

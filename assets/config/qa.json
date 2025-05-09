@@ -1,5 +1,6 @@
 {
     "BASE_API_URL": "",
     "APP_PREFIX": "mvvm_template",
+    "API_KEY": "09102d63fc3d4a922b27171c56d5b628",
     "FLAVOR": "qa"
 }

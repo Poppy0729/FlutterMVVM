@@ -4,11 +4,13 @@ import 'package:flutter/services.dart';
 class AppConfig {
   final String baseApiUrl;
   final String flavor;
+  final String apiKey;
   final String? appPrefix;
 
   AppConfig({
     required this.baseApiUrl,
     required this.flavor,
+    required this.apiKey,
     this.appPrefix
   });
 
@@ -28,6 +30,7 @@ class AppConfig {
     return AppConfig(
       baseApiUrl: json['BASE_API_URL'], 
       flavor: json['FLAVOR'], 
+      apiKey: json['API_KEY'],
       appPrefix: json['APP_PREFIX']
     );
   }

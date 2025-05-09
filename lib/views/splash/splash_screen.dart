@@ -15,16 +15,13 @@ class SplashScreen extends StatelessWidget {
       },
       child: Consumer<SplashViewModel>(
         builder: (context, data, widget) {
-          return Scaffold(
-            body: Container(
-              decoration: BoxDecoration(
-                color: Theme.of(context).highlightColor,
-                image: const DecorationImage(
-                  image: AssetImage("assets/images/imv-card.png"),
-                  fit: BoxFit.fill,
-                ),
+          return const Scaffold(
+            body: Center(
+              child: Text(
+                'Weather App',
+                style: TextStyle(fontSize: 45, fontWeight: FontWeight.bold, color: Colors.black),
               ),
-            ),
+            )
           );
         },
       ),
