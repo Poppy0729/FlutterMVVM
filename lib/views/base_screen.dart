@@ -124,7 +124,7 @@ mixin BasePageScreen<Page extends BaseScreen> on BaseScreenState<Page> {
 
   checkWifi() async {
     var connectivityResult = await Connectivity().checkConnectivity();
-    bool connectedToWifi = (connectivityResult == ConnectivityResult.wifi || connectivityResult == ConnectivityResult.mobile);
+    bool connectedToWifi = (connectivityResult.isNotEmpty && connectivityResult[0] != ConnectivityResult.none);
     if (!connectedToWifi) {
       // ignore: use_build_context_synchronously
       showSnackBar(

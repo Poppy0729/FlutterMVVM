@@ -21,6 +21,7 @@ class _HomeScreenState extends BaseScreenState<HomeScreen> with BasePageScreen {
   @override
   void initState() {
     super.initState();
+    viewModel.fetchWeather();
   }
 
   @override
@@ -143,56 +144,58 @@ class _HomeScreenState extends BaseScreenState<HomeScreen> with BasePageScreen {
                 const SizedBox(
                   height: 20,
                 ),
-                SingleChildScrollView(
-                  child: 
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Expanded(
-                                child: weatherDaily("Wind speed", "${data.weather?.current?.windSpeed} m/s", "2 km/h", 'ic-wind')
-                              ),
-                              const SizedBox(
-                                width: 10,
-                              ),
-                              Expanded(
-                                child: weatherDaily("Rain chance", "24%", "10%", 'ic-rain')
-                              ),
-                            ],
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Expanded(
-                                child: weatherDaily("Pressure", "${data.weather?.current?.pressure} hpa", "32 hpa", 'ic-pressure')
-                              ),
-                              const SizedBox(
-                                width: 10,
-                              ),
-                              Expanded(
-                                child: weatherDaily("UV Index", "2.3", "0.3", 'ic-sun')
-                              ),
-                            ],
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          // if (data.weather?.daily != null) DailyForecast(dailyList: data.weather?.daily ?? [],),
-                          // const SizedBox(
-                          //   height: 10,
-                          // ),
-                          if (data.weather?.hourly != null) HourlyForecast(hourlyList: data.weather?.hourly ?? [],),
-                        ],
+                Expanded(
+                  child: SingleChildScrollView(
+                    child: 
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 16),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Expanded(
+                                  child: weatherDaily("Wind speed", "${data.weather?.current?.windSpeed} m/s", "2 km/h", 'ic-wind')
+                                ),
+                                const SizedBox(
+                                  width: 10,
+                                ),
+                                Expanded(
+                                  child: weatherDaily("Rain chance", "24%", "10%", 'ic-rain')
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Expanded(
+                                  child: weatherDaily("Pressure", "${data.weather?.current?.pressure} hpa", "32 hpa", 'ic-pressure')
+                                ),
+                                const SizedBox(
+                                  width: 10,
+                                ),
+                                Expanded(
+                                  child: weatherDaily("UV Index", "2.3", "0.3", 'ic-sun')
+                                ),
+                              ],
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            if (data.weather?.hourly != null) HourlyForecast(hourlyList: data.weather?.hourly ?? [],),
+                            if (data.weather?.daily != null) DailyForecast(dailyList: data.weather?.daily ?? [],),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
+                  ),
                 ),
               ],
             );
@@ -207,7 +210,7 @@ class _HomeScreenState extends BaseScreenState<HomeScreen> with BasePageScreen {
         padding: const EdgeInsets.all(15),
         decoration: BoxDecoration(
         color: const Color(0xffD0BCFF).withAlpha(80),
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(16),
       ),
       child: Row(
         children: [

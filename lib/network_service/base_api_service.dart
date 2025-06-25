@@ -5,7 +5,6 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_mvvm_template/main.dart';
 import 'package:flutter_mvvm_template/models/api_response.dart';
 import 'package:flutter_mvvm_template/network_service/api_response_mapping.dart';
-import 'package:flutter_mvvm_template/network_service/app_service_management.dart';
 import 'package:flutter_mvvm_template/network_service/auth_interceptor.dart';
 
 class BaseAPIService {
@@ -33,7 +32,7 @@ class BaseAPIService {
 
   Future<bool> isConnectInternet() async {
     var connectivityResult = await (connectivity.checkConnectivity());
-    if (connectivityResult != ConnectivityResult.none) {
+    if (connectivityResult.isNotEmpty && connectivityResult[0] != ConnectivityResult.none) {
       return true;
     } else {
       return false;
@@ -74,7 +73,6 @@ class BaseAPIService {
     }
     
     try {
-      await checkCertificate(dio);
       Response<dynamic> response = await dio.post(
         baseUrl + endpoint,
         options: Options(
@@ -101,7 +99,6 @@ class BaseAPIService {
     }
     
     try {
-      await checkCertificate(dio);
       Response<dynamic> response = await dio.delete(
         baseUrl + endpoint,
         options: Options(headers: myHeaders, responseType: ResponseType.plain),
@@ -125,7 +122,6 @@ class BaseAPIService {
     }
     
     try {
-      await checkCertificate(dio);
       Response<dynamic> response = await dio.put(
         baseUrl + endpoint,
         options: Options(
