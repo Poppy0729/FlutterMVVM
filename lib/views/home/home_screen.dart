@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mvvm_template/models/weather.dart';
 import 'package:flutter_mvvm_template/views/base_screen.dart';
 import 'package:flutter_mvvm_template/views/home/widgets/daily_forecast.dart';
 import 'package:flutter_mvvm_template/views/home/widgets/hourly_forecast.dart';

@@ -1,4 +1,3 @@
-import 'package:flutter_mvvm_template/models/api_response.dart';
 import 'package:flutter_mvvm_template/utils/pprint.dart';
 import 'package:flutter_mvvm_template/utils/utilities.dart';
 import 'package:flutter_mvvm_template/view_models/base_view_model.dart';
@@ -26,7 +25,7 @@ class HomeViewModel extends BaseViewModel {
       notifyListeners();
     }).onError((error, stackTrace) {
       // apiError(error as APIResponse);
-      print(error);
+      pprint(error);
       callApi(false);
     });
   }

@@ -101,29 +101,29 @@ class AppTheme {
   static final ElevatedButtonThemeData elevatedButtonTheme =
       ElevatedButtonThemeData(
     style: ButtonStyle(
-      backgroundColor: MaterialStateProperty.resolveWith((states) {
-        if (states.contains(MaterialState.disabled)) {
+      backgroundColor: WidgetStateProperty.resolveWith((states) {
+        if (states.contains(WidgetState.disabled)) {
           return disabledColor;
         }
         return yellowColor;
       }),
-      foregroundColor: MaterialStateProperty.resolveWith((states) {
-        if (states.contains(MaterialState.disabled)) {
+      foregroundColor: WidgetStateProperty.resolveWith((states) {
+        if (states.contains(WidgetState.disabled)) {
           return textButtonDisabledColor;
         }
         return textButtonColor;
       }),
-      elevation: const MaterialStatePropertyAll(0),
-      side: MaterialStateBorderSide.resolveWith((states) {
-        if (states.contains(MaterialState.disabled)) {
+      elevation: const WidgetStatePropertyAll(0),
+      side: WidgetStateBorderSide.resolveWith((states) {
+        if (states.contains(WidgetState.disabled)) {
           return const BorderSide(color: disabledBorderColor);
         }
         return const BorderSide(color: Colors.transparent);
       }),
-      shape: MaterialStatePropertyAll(RoundedRectangleBorder(
+      shape: WidgetStatePropertyAll(RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(8),
       )),
-      minimumSize: const MaterialStatePropertyAll(Size(220, 60)),
+      minimumSize: const WidgetStatePropertyAll(Size(220, 60)),
     ),
   );
 
@@ -162,7 +162,7 @@ class AppTheme {
     appBarTheme: appBarTheme,
     colorScheme: const ColorScheme.light(
         primary: primaryColor,
-        background: baseBackgroundColor,
+        surface: baseBackgroundColor,
         onPrimary: onPrimaryColor,
         secondary: _accentColor,
         primaryContainer: primaryVariantColor,
@@ -178,13 +178,13 @@ class AppTheme {
     canvasColor: Colors.cyanAccent,
     dropdownMenuTheme: const DropdownMenuThemeData(
       menuStyle: MenuStyle(
-        backgroundColor: MaterialStatePropertyAll<Color>(Colors.green),
+        backgroundColor: WidgetStatePropertyAll<Color>(Colors.green),
       ),
     ),
     menuTheme: const MenuThemeData(
       style: MenuStyle(
-        backgroundColor: MaterialStatePropertyAll<Color>(Colors.red),
-        padding: MaterialStatePropertyAll(EdgeInsets.all(10)),
+        backgroundColor: WidgetStatePropertyAll<Color>(Colors.red),
+        padding: WidgetStatePropertyAll(EdgeInsets.all(10)),
       ),
     ),
   );
